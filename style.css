@@ -27,7 +27,7 @@
 .titulo{
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    height: 50px;
+    height: 65px;
     width: 300px;
     background-color: rgb(151, 218, 106);
     text-align: center;
@@ -35,14 +35,16 @@
     padding-top: 10px;
 }
 
+.tituloTexto{
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+
 .espacio{
     width: 70px;
 }
 
-.titulo *{
-    font-size: xx-large;
-    font-weight: bolder;
-}
 
 .tituloInicial{
     background-color: rgba(0, 0, 0, 0.096);
@@ -52,7 +54,106 @@
     align-content: right;
     text-align: center;
 }
+
 .tituloInicial *{
     color: rgba(0, 0, 0, 0.481);
     padding-top: 20px;
 }
+
+.containerBotonDropDown{
+    padding-left: 10px;
+}
+
+.imagenDropDown{
+    width: 30px;
+    height: 20px;
+}
+
+.botonImagenDropDown{
+    background: none;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.botonImagenDropDown:hover{
+    background-color: rgba(0, 0, 0, 0.103);
+    border-radius: 100px;
+}
+
+.configuracionesListas{
+    display: flex;
+    flex-direction: row;
+    padding-left: 15px;
+    padding-block: 5px;
+}
+
+#tipoOrden{
+    padding-left: 5px;
+    
+}
+
+.flexboxSubtitulo{
+    display: flex;
+    flex-direction: row;
+}
+
+.botonVaciar{
+    background-color: rgba(67, 105, 43, 0.103);
+    height: 20px;
+    width: 80px;
+    color: inherit;
+    border: none;
+    font-size: small;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.botonVaciar:hover{
+    background-color: rgba(67, 105, 43, 0.616);
+}
+
+.añadirTarea{
+    padding-left: 165px;
+}
+
+.botonAñadirTarea{
+    background-color: rgba(67, 105, 43, 0.103);
+    height: 20px;
+    width: 35px;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.botonAñadirTarea:hover{
+    background-color: rgba(67, 105, 43, 0.616);
+}
+
+.imagenAñadirTarea{
+    height: inherit;
+    width: inherit;
+    filter: invert(100);
+}
+
+
+.vaciarListaSeguridad{
+    padding-left: 10px;
+}
+
+.contenedorTareas{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-top-color: rgba(0, 0, 0, 0.048);
+    border-top-style: solid;
+    border-top-width: 1px;
+
+    border-bottom-color: rgba(0, 0, 0, 0.048);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+

@@ -14,30 +14,72 @@
             <div class="flexbox">
                 <div class = "BLOQUES">
                     <div class = "titulo">
-                        <span> TO-DO </span>
+                        <div class="tituloTexto">
+                            <span> TO-DO </span>
+                        </div>
+                        <div class= "flexboxSubtitulo">
+
+                            <div class="vaciarListaSeguridad">
+                                <button class = "botonVaciar" onclick = "vaciarListaSeguridad(1);"> Vaciar lista </button>
+                            </div>
+
+                            <div class="añadirTarea">
+                                <button class = "botonAñadirTarea" onclick = "añadirTarea(1);">
+                                    <img class = "imagenAñadirTarea" src="./imgs/plus-solid.svg"/>
+                                </button>
+                            </div>
+                        </div>
+                        
                     </div>
                     
                     <div class="configuracionesListas">
-                        
+                        <span> Ordenar por: </span>
+                        <span id = "tipoOrden"> [elemento] </span>
+                        <div class = "containerBotonDropDown">
+                            <button class="botonImagenDropDown" onclick = "dropDownOrden(1);">
+                                <img class="imagenDropDown" src="./imgs/caret-down-solid.svg">
+                            </button>
+                        </div>
                     </div>
-
-                    <div class="contenedorTareas">
-
+                    
+                    
+                    <div class="contenedorTareas"  id="contenedorTareas1">
+                        
                     </div>
                 </div>
 
                 <div class="espacio"></div>
                 
                 <div class = "BLOQUES">
-                    <div class= "titulo">
-                        <span> DOING </span>
+                    <div class = "titulo">
+                        <div class="tituloTexto">
+                            <span> DOING </span>
+                        </div>
+                        <div class= "flexboxSubtitulo">
+                            
+                            <div class="vaciarListaSeguridad">
+                                <button class = "botonVaciar" onclick = "vaciarListaSeguridad(2);"> Vaciar lista </button>
+                            </div>
+
+                            <div class="añadirTarea">
+                                <button class = "botonAñadirTarea" onclick = "añadirTarea(2);">
+                                    <img class = "imagenAñadirTarea" src="./imgs/plus-solid.svg"/>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="configuracionesListas" id = "2">
-                        
+                    <div class="configuracionesListas">
+                        <span> Ordenar por: </span>
+                        <span id = "tipoOrden"> [elemento] </span>
+                        <div class = "containerBotonDropDown">
+                            <button class="botonImagenDropDown" onclick = "dropDownOrden(2);">
+                                <img class="imagenDropDown" src="./imgs/caret-down-solid.svg">
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="contenedorTareas" id = "2">
+                    <div class="contenedorTareas" id="contenedorTareas2">
 
                     </div>
                 </div>
@@ -46,20 +88,42 @@
 
                 <div class = "BLOQUES">
                     <div class = "titulo">
-                        <span> DONE </span>
+                        <div class="tituloTexto">
+                            <span> DONE </span>
+                        </div>
+                        <div class= "flexboxSubtitulo">
+                            
+                            <div class="vaciarListaSeguridad">
+                                <button class = "botonVaciar" onclick = "vaciarListaSeguridad(3);"> Vaciar lista </button>
+                            </div>
+
+                            <div class="añadirTarea">
+                                <button class = "botonAñadirTarea" onclick = "añadirTarea(3);">
+                                    <img class = "imagenAñadirTarea" src="./imgs/plus-solid.svg"/>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="configuracionesListas" id="">
-                        
+                    <div class="configuracionesListas">
+                        <span> Ordenar por: </span>
+                        <span id = "tipoOrden"> [elemento] </span>
+                        <div class = "containerBotonDropDown">
+                            <button class="botonImagenDropDown" onclick = "dropDownOrden(3);">
+                                <img class="imagenDropDown" src="./imgs/caret-down-solid.svg">
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="contenedorTareas" id = "3">
+                    <div class="contenedorTareas" id="contenedorTareas3">
 
                     </div>
                 </div>
             </div>
         </div>
+        <script src="./funcionalidad.ts" type="text/typescript"></script>
     </body>
+</html>
 
 
 
