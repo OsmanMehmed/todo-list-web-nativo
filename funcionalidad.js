@@ -1,8 +1,14 @@
 
-console.log("Esto es un mensaje de prueba");
+let botonAñadirTarea = document.getElementById("añadirTarea1");
+botonAñadirTarea.addEventListener("click", () =>{
+    console.log("ALERTA");
+});
 
-class tarea {
 
+function llorar(){
+    
+}
+class Tarea {
     nombre;
     estado;
 
