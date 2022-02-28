@@ -21,20 +21,25 @@ let prioridadTareaNUEVO = document.getElementById("tPrioridad");
 let nombreTareaNUEVO = document.getElementById("tNombre");
 let descripcionTareaNUEVO = document.getElementById("tDescripcion");
 
+let tituloVentanaModalCreacion = document.getElementById("tituloVentanaModalCreacion");
+
 
 botonAñadirTarea1.addEventListener("click", (event) => {
     event.preventDefault();
     mostrarCreacionTarea(1);
+    tituloVentanaModalCreacion.textContent = ">>> TO-DO <<<";
 });
 
 botonAñadirTarea2.addEventListener("click", (event) => {
     event.preventDefault();
     mostrarCreacionTarea(2);
+    tituloVentanaModalCreacion.textContent = ">>> DOING <<<";
 });
 
 botonAñadirTarea3.addEventListener("click", (event) => {
     event.preventDefault();
     mostrarCreacionTarea(3);
+    tituloVentanaModalCreacion.textContent = ">>> DONE <<<";
 });
 
 botonNUEVOsalirCrearTarea.addEventListener("click", (event) => {
@@ -82,7 +87,6 @@ function mostrarCreacionTarea(estado){
     dejarFondoInutil.style.visibility = "initial";
     mainAñadirTarea.style.visibility = "initial";
     estado_TAREANUEVA = estado;
-    console.log(estado);
 }
 
 

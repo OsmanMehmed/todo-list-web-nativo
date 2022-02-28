@@ -125,7 +125,7 @@
 
 .botonAñadirTarea{
     background-color: rgba(67, 105, 43, 0.103);
-    height: 20px;
+    height: 22px;
     width: 35px;
     color: inherit;
     border: none;
@@ -138,7 +138,7 @@
 }
 
 .imagenAñadirTarea{
-    height: inherit;
+    height: 22px;
     width: inherit;
     filter: invert(100);
 }
@@ -189,7 +189,7 @@ VENTANA DE CREACION DE TAREAS
     background-color: #97DA6A;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
-    color: #2E2E1E;
+    color: #ffffffe8;
     font-weight: bolder;
 }
 
@@ -211,18 +211,9 @@ VENTANA DE CREACION DE TAREAS
     z-index: 1;
 }
 
-.dejarFondoInutil .ocultar{
-
-}
-
-.dejarFondoInutil .mostrar{
-    visibility: visible;
-}
-
 
 .tituloModalTITULO{
     text-align: center;
-    padding-top: 8px;
     padding-bottom: 10px;
 }
 
@@ -254,14 +245,18 @@ VENTANA DE CREACION DE TAREAS
 }
 
 .contenedorNombreTarea{
-    padding-block: 10px;
     display: flex;
     flex-direction: row;
 }
 
 .inputNUEVONombreTarea1{
     padding-left: 10px;
-    padding-top: 12px;
+    padding-top: 20px;
+}
+
+.inputNUEVONombreTarea2{
+    border-radius: 3px;
+    border: none;
 }
 
 .contenedorPrioridadTarea{
@@ -272,25 +267,35 @@ VENTANA DE CREACION DE TAREAS
 
 .inputNUEVOPrioridadTarea1{
     padding-left: 10px;
-    padding-top: 12px;
+    padding-top: 20px;
 }
 
 .inputNUEVOPrioridadTarea2{
     width: 20px;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
 }
 
 .flechasCrearTarea{
     display: flex;
     flex-direction: column;
-    padding-left: 30px;
+    padding-left: 10px;
 }
 
 .flechaArriba{
-    height: 20px;
-    width: 20px;
+    margin: 1px;
+    height: 30px;
+    width: 30px;
     border: none;
     background: none;
     cursor: pointer;
+    border-radius: 20px;
+}
+
+.imagenFlechaArriba{
+    width: 20px;
+    height: 20px;
 }
 
 .flechaArriba:hover{
@@ -298,12 +303,20 @@ VENTANA DE CREACION DE TAREAS
 }
 
 .flechaAbajo{
-    height: 25px;
-    width: 20px;
+    margin: 1px;
+    height: 30px;
+    width: 30px;
     transform: rotate(180deg);
     border: none;
+    border-radius: 20px;
     background: none;
     cursor: pointer;
+
+}
+
+.imagenFlechaAbajo{
+    width: 20px;
+    height: 20px;
 }
 
 .flechaAbajo:hover{
@@ -311,27 +324,117 @@ VENTANA DE CREACION DE TAREAS
 }
 
 .contenedorNombre-salir{
-    padding-top: 12px;
+    padding-top: 20px;
 }
 
 .descripcionNUEVATareaDescripcion{
-    padding-top: 5px;
+    padding-top: 20px;
 }
 
 .inputNUEVODescripcionTarea{
     tab-size: 100px;
     resize: none;
+    border: none;
+    border-radius: 3px;
 }
 
-.enviarCREARTarea{
-
+.tituloVentanaModalCreacion2{
+    padding-left: 10px;
 }
 
-.cancelarCREARTarea{
-    
+.tituloVentanaModalCreacion22{
+    color: white;
+    font-size: larger;
 }
 
 .contenedorNUEVOBotonesTarea{
+    padding-block: 10px;
     display: flex;
     flex-direction: row;
+    margin-left: 360px;
+}
+
+.inputNUEVOEnviarTarea{
+    background-color: #97DA6A;
+    border: none;
+    border-radius:10px; 
+    height: 20px;
+    width: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.inputNUEVOEnviarTarea:hover{
+    background-color: rgba(67, 105, 43, 0.616);
+}
+
+
+.botonCancelarCrearTarea{
+    background-color: #97DA6A;
+    border-radius: 10px;
+    border: none;
+    height: 20px;
+    width: 80px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.botonCancelarCrearTarea:hover{
+    background-color: rgba(67, 105, 43, 0.616);
+}
+
+
+/* 
+
+#############################
+
+     TAREA MADRE OCULTA
+
+#############################
+
+*/
+
+.mainTareaMadre{
+    visibility: visible;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    left: 82px;
+    top: 250px;
+    
+    width: 250px;
+    height: 60px;
+    background-color: rgba(151, 218, 106, 1);
+    border-radius: 5px;
+}
+
+.checkbox{
+    padding-left: 5px;
+    padding-top: 23px;
+    padding-right: 5px;
+}
+
+.CONTnombreTarea{
+    text-align: center;
+    background-color: #97DA6A;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.nombreTarea{
+    border: none;
+    background-color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    width: 250px;
+    height: 60px;
+    border-left-color: #D6D59D;
+    border-left-width: 1px;
+    border-left-style: solid;
+    
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
