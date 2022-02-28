@@ -3,15 +3,15 @@ let botonAñadirTarea2 = document.getElementById("añadirTarea2");
 let botonAñadirTarea3 = document.getElementById("añadirTarea3");
 
 
-
-let botonSalirCrearTarea = document.getElementById("salirCrearTarea");
 let dejarFondoInutil = document.getElementById("dejarFondoInutil");
 let mainAñadirTarea = document.getElementById("mainAñadirTarea");
 
-let botonSubmitearTarea = document.getElementById("tEnviar");
+
+let botonNUEVOSubmitearTarea = document.getElementById("tEnviar");
 let botonNUEVOsubirPrioridadTarea = document.getElementById("botonNUEVOSubirPrioridad");
 let botonNUEVOreducirPriodidadTarea = document.getElementById("botonNUEVOReducirPrioridad");
-
+let botonNUEVOcancelarCrearTarea = document.getElementById("botonCancelarCrearTarea");
+let botonNUEVOsalirCrearTarea = document.getElementById("salirCrearTarea");
 
 let prioridad_TAREANUEVA = 0;
 let estado_TAREANUEVA = 0;
@@ -27,24 +27,18 @@ botonAñadirTarea1.addEventListener("click", (event) => {
     mostrarCreacionTarea(1);
 });
 
-botonAñadirTarea1.addEventListener("click", (event) => {
+botonAñadirTarea2.addEventListener("click", (event) => {
     event.preventDefault();
     mostrarCreacionTarea(2);
 });
 
-botonAñadirTarea1.addEventListener("click", (event) => {
+botonAñadirTarea3.addEventListener("click", (event) => {
     event.preventDefault();
     mostrarCreacionTarea(3);
 });
 
-
-function mostrarCreacionTarea(estado){
-    dejarFondoInutil.style.visibility = "initial";
-    mainAñadirTarea.style.visibility = "initial";
-    this.estado_TAREANUEVA = estado;
-}
-
-botonSalirCrearTarea.addEventListener("click", () => {
+botonNUEVOsalirCrearTarea.addEventListener("click", (event) => {
+    event.preventDefault();
     dejarFondoInutil.style.visibility = "hidden";
     mainAñadirTarea.style.visibility = "hidden";
 });
@@ -61,13 +55,40 @@ botonNUEVOreducirPriodidadTarea.addEventListener("click", (event) => {
     prioridadTareaNUEVO.value = prioridad_TAREANUEVA;
 });
 
-botonSubmitearTarea.addEventListener("click", (event) => {
+botonNUEVOSubmitearTarea.addEventListener("click", (event) => {
     event.preventDefault();
     dejarFondoInutil.style.visibility = "hidden"; 
     mainAñadirTarea.style.visibility = "hidden";
+    
     tareaNUEVA = new Tarea (nombreTareaNUEVO.value, estado_TAREANUEVA, descripcionTareaNUEVO.value, prioridadTareaNUEVO.value);
+    nombreTareaNUEVO.value = "";
+    descripcionTareaNUEVO.value = "";
+    prioridadTareaNUEVO.value = "";
+
+    insertarTarea(tareaNUEVA);
+}); 
+
+botonNUEVOcancelarCrearTarea.addEventListener("click", (event) => {
+    event.preventDefault();
+    dejarFondoInutil.style.visibility = "hidden"; 
+    mainAñadirTarea.style.visibility = "hidden";
+    
+    nombreTareaNUEVO.value = "";
+    descripcionTareaNUEVO.value = "";
+    prioridadTareaNUEVO.value = "";
 });
 
+function mostrarCreacionTarea(estado){
+    dejarFondoInutil.style.visibility = "initial";
+    mainAñadirTarea.style.visibility = "initial";
+    estado_TAREANUEVA = estado;
+    console.log(estado);
+}
+
+
+function insertarTarea (tarea){
+
+}
 
 class Tarea {
     nombre;
