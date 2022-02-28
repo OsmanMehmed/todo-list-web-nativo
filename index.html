@@ -121,6 +121,83 @@
                 </div>
             </div>
         </div>
+
+        <form class = "mainAñadirTarea" id ="mainAñadirTarea">
+                <div class = "contenedorTituloModal">
+                    <div class = "tituloModalBotonSalir">
+                        <button class = "salirCrearTarea" id ="salirCrearTarea">
+                            <img class = "imagenSalirCrearTarea" src="./imgs/x-solid.svg" />
+                        </button>
+                    </div>
+                    
+                    <div class = "tituloModalTITULO">
+                        <span class = "tituloVentanaModalCreacion"> CREAR NUEVA TAREA PARA: </span>
+                        <span class = "tituloVentanaModalCreacion" id = "tituloVentanaModalCreacion"> [Elemento] </span>
+                    </div> 
+                </div>
+
+                <div class = "contenedorCuerpoModal">
+                    
+                    <div class = "contenedorNombreTarea">
+                        <div class = "contenedorNombre-salir">
+                            <span class = "nombre"> Nombre : </span>
+                        </div>
+
+                        <div class = "inputNUEVONombreTarea1">
+                            <input class = "inputNUEVONombreTarea2" type = "text" id = "tNombre" name = "tNombre">
+                        </div>
+
+                        <div class = "contenedorPrioridadTarea">
+
+                            <div class = "contenedorNombre-salir">
+                                <span class = "nombre"> Prioridad de la tarea : </span>
+                            </div>
+    
+                            <div class = "inputNUEVOPrioridadTarea1">
+                                <input class = "inputNUEVOPrioridadTarea2" type = "text" id = "tPrioridad" name = "tPrioridadnombre" value = "0">
+                            </div>
+                            
+                            <div class = "flechasCrearTarea">
+                                <button class = "flechaArriba" id = "botonNUEVOSubirPrioridad">
+                                    <img class = "imagenFlechaArriba" src = "./imgs/angle-up-solid.svg" />
+                                </button>
+
+                                <button class = "flechaAbajo"  id = "botonNUEVOReducirPrioridad">
+                                    <img class = "imagenFlechaAbajo" src = "./imgs/angle-up-solid.svg" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class = "contenedorNUEVODescripcionTarea">
+
+                        <div class = "descripcionNUEVATarea">
+                            <span class = "descripcionNUEVATareaTitulo"> Descripción :</span>
+                        </div>
+
+                        <div class = "descripcionNUEVATareaDescripcion">
+                            <textarea class = "inputNUEVODescripcionTarea" id = "tDescripcion" name = "tDescripcion" rows = "10" cols = "78" ></textarea>
+                        </div>
+                        
+                    </div>
+
+                    <div class = "contenedorNUEVOBotonesTarea">
+                        <div class ="enviarCREARTarea">
+                            <button class = "inputNUEVOEnviarTarea" id = "tEnviar"> Crear </button>
+                        </div>
+                        
+                        <div class ="cancelarCREARTarea">
+                            <button class = "botonCancelarFormularioCrearTarea" id = "botonCancelarFormularioCrearTarea"> Cancelar </button>
+                        </div>             
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+        <div class = "dejarFondoInutil" id = "dejarFondoInutil"></div>
+
         <script src="funcionalidad.js" type="text/javascript"></script>
     </body>
 </html>

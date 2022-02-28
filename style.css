@@ -5,7 +5,12 @@
 }
 
 .main{
+    position: relative;
+    display: inline-block;
     background-color: rgb(216, 215, 138);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
 .flexbox{
@@ -157,3 +162,176 @@
     border-bottom-width: 1px;
 }
 
+/* 
+
+#############################
+
+VENTANA DE CREACION DE TAREAS
+
+#############################
+
+*/
+
+.mainAñadirTarea{
+    visibility: hidden;
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    left: 450px;
+    top: 200px;
+    z-index: 2;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-weight: bold;
+}
+
+.contenedorTituloModal{
+    background-color: #97DA6A;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    color: #2E2E1E;
+    font-weight: bolder;
+}
+
+.contenedorCuerpoModal{
+    background-color: #E1E0A5;
+    padding-left: 30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.dejarFondoInutil{
+    visibility: hidden;    
+    background-color: rgba(0, 0, 0, 0.541);
+    position: absolute;
+    width: 100%;
+    height: 785px;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+.dejarFondoInutil .ocultar{
+
+}
+
+.dejarFondoInutil .mostrar{
+    visibility: visible;
+}
+
+
+.tituloModalTITULO{
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 10px;
+}
+
+.tituloModalBotonSalir{
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 10px;
+    height: 25px;
+}
+
+.salirCrearTarea{
+    height: 20px;
+    width: 20px;
+    border: none;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    filter: invert(100);
+    border-radius: 5px;
+}
+
+.salirCrearTarea:hover{
+    background-color: rgba(255, 255, 255, 0.103);
+}
+
+.imagenSalirCrearTarea{
+    height: inherit;
+    width: inherit;
+}
+
+.contenedorNombreTarea{
+    padding-block: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.inputNUEVONombreTarea1{
+    padding-left: 10px;
+    padding-top: 12px;
+}
+
+.contenedorPrioridadTarea{
+    padding-left: 92px;
+    display: flex;
+    flex-direction: row;
+}
+
+.inputNUEVOPrioridadTarea1{
+    padding-left: 10px;
+    padding-top: 12px;
+}
+
+.inputNUEVOPrioridadTarea2{
+    width: 20px;
+}
+
+.flechasCrearTarea{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+.flechaArriba{
+    height: 20px;
+    width: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.flechaArriba:hover{
+    background-color: rgba(0, 0, 0, 0.103);
+}
+
+.flechaAbajo{
+    height: 25px;
+    width: 20px;
+    transform: rotate(180deg);
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.flechaAbajo:hover{
+    background-color: rgba(0, 0, 0, 0.103);
+}
+
+.contenedorNombre-salir{
+    padding-top: 12px;
+}
+
+.descripcionNUEVATareaDescripcion{
+    padding-top: 5px;
+}
+
+.inputNUEVODescripcionTarea{
+    tab-size: 100px;
+    resize: none;
+}
+
+.enviarCREARTarea{
+
+}
+
+.cancelarCREARTarea{
+    
+}
+
+.contenedorNUEVOBotonesTarea{
+    display: flex;
+    flex-direction: row;
+}
