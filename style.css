@@ -438,3 +438,76 @@ VENTANA DE CREACION DE TAREAS
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
+/* 
+
+#############################
+
+    VENTANA DE SEGURIDAD
+
+#############################
+
+*/
+
+.mainPreguntaSeguridadVaciar{
+    visibility: hidden;
+    position: absolute;
+    left: 600px;
+    top: 300px;
+    
+    width: 300px;
+    height: 143px;
+    background-color: #f7f5b2;
+    border-radius: 5px;
+    z-index: 4;
+}
+
+.containerTextoVentanaPreguntaSeguridadVaciar{
+    font-weight: bolder;
+    padding-block: 20px;
+    text-align: center;
+}
+
+.containerBotonAceptarVentanaPreguntaSeguridadVaciar{
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.containerBotonSalirVentanaPreguntaSeguridadVaciar{
+    padding-left: 190px;
+    padding-top: 10px;
+}
+
+.botonAceptarVentanaPreguntaSeguridadVaciar{
+    border: none;
+    background-color: #97DA6A;
+    cursor: pointer;
+    height: 20px;
+    width: 90px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.botonAceptarVentanaPreguntaSeguridadVaciar:hover{
+    background-color: rgba(67, 105, 43, 0.616);
+}
+
+
+.botonSalirVentanaPreguntaSeguridadVaciar{
+    border: none;
+    background-color: #97DA6A;
+    cursor: pointer;
+    height: 23px;
+    width: 90px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.botonSalirVentanaPreguntaSeguridadVaciar:hover{
+    background-color: rgba(67, 105, 43, 0.616);
+}
+
+.textoSalirVentanaPreguntaSeguridadVaciar2{
+    color: rgb(206, 197, 197);
+}
+

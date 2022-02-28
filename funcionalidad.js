@@ -1,10 +1,13 @@
 let botonAñadirTarea1 = document.getElementById("añadirTarea1");
 let botonAñadirTarea2 = document.getElementById("añadirTarea2");
 let botonAñadirTarea3 = document.getElementById("añadirTarea3");
-
+let botonSEGURIDADabrir1 = document.getElementById("vaciarListaSeguridad1");
+let botonSEGURIDADabrir2 = document.getElementById("vaciarListaSeguridad2");
+let botonSEGURIDADabrir3 = document.getElementById("vaciarListaSeguridad3");
 
 let dejarFondoInutil = document.getElementById("dejarFondoInutil");
 let mainAñadirTarea = document.getElementById("mainAñadirTarea");
+let mainPreguntaSeguridadVaciar = document.getElementById("mainPreguntaSeguridadVaciar");
 
 
 let botonNUEVOSubmitearTarea = document.getElementById("tEnviar");
@@ -12,6 +15,10 @@ let botonNUEVOsubirPrioridadTarea = document.getElementById("botonNUEVOSubirPrio
 let botonNUEVOreducirPriodidadTarea = document.getElementById("botonNUEVOReducirPrioridad");
 let botonNUEVOcancelarCrearTarea = document.getElementById("botonCancelarCrearTarea");
 let botonNUEVOsalirCrearTarea = document.getElementById("salirCrearTarea");
+let botonAceptarVentanaPreguntaSeguridadVaciar = document.getElementById("botonAceptarVentanaPreguntaSeguridadVaciar");
+let botonSalirVentanaPreguntaSeguridadVaciar = document.getElementById("botonSalirVentanaPreguntaSeguridadVaciar");
+
+
 
 let prioridad_TAREANUEVA = 0;
 let estado_TAREANUEVA = 0;
@@ -22,7 +29,18 @@ let nombreTareaNUEVO = document.getElementById("tNombre");
 let descripcionTareaNUEVO = document.getElementById("tDescripcion");
 
 let tituloVentanaModalCreacion = document.getElementById("tituloVentanaModalCreacion");
+let textoSalirVentanaPreguntaSeguridadVaciar = document.getElementById("textoSalirVentanaPreguntaSeguridadVaciar");
 
+
+/* 
+
+#############################
+
+VENTANA DE CREACION DE TAREAS
+
+#############################
+
+*/
 
 botonAñadirTarea1.addEventListener("click", (event) => {
     event.preventDefault();
@@ -83,6 +101,69 @@ botonNUEVOcancelarCrearTarea.addEventListener("click", (event) => {
     prioridadTareaNUEVO.value = "";
 });
 
+
+/* 
+
+#############################
+
+    VENTANA DE SEGURIDAD
+
+#############################
+
+*/
+
+botonSEGURIDADabrir1.addEventListener("click", (event) => {
+    event.preventDefault();
+    mostrarSeguridadVaciado();
+    textoSalirVentanaPreguntaSeguridadVaciar.textContent = "TO-DO";
+});
+
+botonSEGURIDADabrir2.addEventListener("click", (event) => {
+    event.preventDefault();
+    mostrarSeguridadVaciado();
+    textoSalirVentanaPreguntaSeguridadVaciar.textContent = "DOING";
+});
+
+botonSEGURIDADabrir3.addEventListener("click", (event) => {
+    event.preventDefault();
+    mostrarSeguridadVaciado();
+    textoSalirVentanaPreguntaSeguridadVaciar.textContent = "DONE";
+
+});
+
+botonAceptarVentanaPreguntaSeguridadVaciar.addEventListener("click", (event) => {
+    event.preventDefault();
+    vaciarLista();
+    dejarFondoInutil.style.visibility = "hidden";
+    mainPreguntaSeguridadVaciar.style.visibility = "hidden";
+
+});
+
+botonSalirVentanaPreguntaSeguridadVaciar.addEventListener("click", (event) => {
+    event.preventDefault();
+    dejarFondoInutil.style.visibility = "hidden";
+    mainPreguntaSeguridadVaciar.style.visibility = "hidden";
+});
+
+
+
+
+/* 
+
+#############################
+
+    FUNCIONES // CLASES
+
+#############################
+
+*/
+
+function mostrarSeguridadVaciado(estado){
+    dejarFondoInutil.style.visibility = "initial";
+    mainPreguntaSeguridadVaciar.style.visibility = "initial";
+}
+
+
 function mostrarCreacionTarea(estado){
     dejarFondoInutil.style.visibility = "initial";
     mainAñadirTarea.style.visibility = "initial";
@@ -91,6 +172,10 @@ function mostrarCreacionTarea(estado){
 
 
 function insertarTarea (tarea){
+
+}
+
+function vaciarLista (lista){
 
 }
 
