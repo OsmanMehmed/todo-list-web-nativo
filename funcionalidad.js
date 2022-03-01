@@ -43,6 +43,9 @@ let tituloVentanaModalCreacion2 = document.getElementById("tituloVentanaModalCre
 let tituloVentanaModalCreacion1 = document.getElementById("tituloVentanaModalCreacion1");
 let textoSalirVentanaPreguntaSeguridadVaciar = document.getElementById("textoSalirVentanaPreguntaSeguridadVaciar");
 
+let descripcionTarea = document.getElementById("mainMostrarDescripcion");
+let descripcionTareaSalir = document.getElementById("descripcionBotonSalir");
+let descripcionTareaLEER = document.getElementById("descripcionTareaLEER");
 let mapa = new Map();
 
 /* 
@@ -161,6 +164,13 @@ botonSalirVentanaPreguntaSeguridadVaciar.addEventListener("click", (event) => {
     mainPreguntaSeguridadVaciar.style.visibility = "hidden";
 });
 
+descripcionTareaSalir.addEventListener("click", (event) => {
+    event.preventDefault();
+    dejarFondoInutil.style.visibility = "hidden";
+    descripcionTarea.style.visibility = "hidden";
+});
+
+
 
 /* 
 
@@ -185,21 +195,19 @@ function mostrarCreacionTarea(estado){
 }
 
 
+
+
 function insertarTarea (tarea){
 
     let clonTareaMadre = tareaHija.cloneNode(true);
     let nombreTarea = clonTareaMadre.getElementsByClassName("nombreTarea");
     let prioridadTarea = clonTareaMadre.getElementsByClassName("prioridadTarea2");
-
-/*     nombreTarea.addEventListener("click", (event) => {
-
-        
-    });
- */
+ 
     nombreTarea[0].innerHTML = tarea.nombre;
     prioridadTarea[0].innerHTML = tarea.prioridad;
 
     clonTareaMadre.style.visibility = "initial";
+
 
     switch (tarea.estado){
         case 1:
@@ -215,7 +223,14 @@ function insertarTarea (tarea){
             break;
     }
 
-
+    nombreTarea[0].addEventListener("click", (event) => {
+        event.preventDefault();
+    
+        descripcionTarea.style.visibility = "initial";
+        dejarFondoInutil.style.visibility = "initial";
+        descripcionTareaLEER.textContent = tarea.descripcion;
+        
+    });
 }
 
 function vaciarLista (lista){
@@ -225,7 +240,7 @@ function vaciarLista (lista){
 function limpiarContenidoCreacionTarea(){
     nombreTareaNUEVO.value = "";
     descripcionTareaNUEVO.value = "";
-    prioridadTareaNUEVO.value = "";
+    prioridadTareaNUEVO.value = 0;
     prioridad_TAREANUEVA = 0;
 }
 

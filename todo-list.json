@@ -1,40 +1,37 @@
-{
-    "tareas" :[
-        {
-            "nombre": "Tarea 1",
-            "descripcion": "Esta es la primera tarea de ejemplo, esta es la primera tarea de ejemplo",
-            "prioridad": 0,
-            "status": "En progreso"
-        },
+[
+    {
+        "nombre": "Tarea 1",
+        "descripcion": "Esta es la primera tarea de ejemplo, esta es la primera tarea de ejemplo",
+        "prioridad": 0,
+        "status": "En progreso"
+    },
 
-        {
-            "nombre": "Tarea 2",
-            "descripcion": "Esta es la descripción de la tarea 2 bla bla bla bla bla bla",
-            "prioridad": 1,
-            "status": "acabado"
-        },
+    {
+        "nombre": "Tarea 2",
+        "descripcion": "Esta es la descripción de la tarea 2 bla bla bla bla bla bla",
+        "prioridad": 1,
+        "status": "acabado"
+    },
 
-        {
-            "nombre": "Tarea 3",
-            "descripcion": "Esta es, Esta es, Esta, Est, Es, E, ,",
-            "prioridad": 3,
-            "status": "acabado"
-        },
+    {
+        "nombre": "Tarea 3",
+        "descripcion": "Esta es, Esta es, Esta, Est, Es, E, ,",
+        "prioridad": 3,
+        "status": "acabado"
+    },
 
-        {
-            "nombre": "Tarea 4",
-            "descripcion": "Esta tarea es la correspondiente al nombre de Tarea 4",
-            "prioridad": 0,
-            "status": "To-Do"
-        },
+    {
+        "nombre": "Tarea 4",
+        "descripcion": "Esta tarea es la correspondiente al nombre de Tarea 4",
+        "prioridad": 0,
+        "status": "To-Do"
+    },
 
-        {
-            "nombre": "Tarea 5",
-            "descripcion": "TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5",
-            "prioridad": 1,
-            "status": "To-Do"
-        }
+    {
+        "nombre": "Tarea 5",
+        "descripcion": "TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5",
+        "prioridad": 1,
+        "status": "To-Do"
+    }
 
-    ]
-    
-}
+]
