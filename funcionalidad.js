@@ -19,18 +19,31 @@ let botonAceptarVentanaPreguntaSeguridadVaciar = document.getElementById("botonA
 let botonSalirVentanaPreguntaSeguridadVaciar = document.getElementById("botonSalirVentanaPreguntaSeguridadVaciar");
 
 
+let lista1 = document.getElementById("lista1");
+let lista2 = document.getElementById("lista2");
+let lista3 = document.getElementById("lista3");
+
+let contenedor1 = document.getElementById("contenedorTareas1");
+let contenedor2 = document.getElementById("contenedorTareas2");
+let contenedor3 = document.getElementById("contenedorTareas3");
+
+let tareaMadre = document.getElementById("mainTareaMadre");
+let tareaHija = tareaMadre.firstElementChild;
 
 let prioridad_TAREANUEVA = 0;
 let estado_TAREANUEVA = 0;
-let tareaNUEVA;
+
+let nTareas = 0;
 
 let prioridadTareaNUEVO = document.getElementById("tPrioridad");
 let nombreTareaNUEVO = document.getElementById("tNombre");
 let descripcionTareaNUEVO = document.getElementById("tDescripcion");
 
-let tituloVentanaModalCreacion = document.getElementById("tituloVentanaModalCreacion");
+let tituloVentanaModalCreacion2 = document.getElementById("tituloVentanaModalCreacion2");
+let tituloVentanaModalCreacion1 = document.getElementById("tituloVentanaModalCreacion1");
 let textoSalirVentanaPreguntaSeguridadVaciar = document.getElementById("textoSalirVentanaPreguntaSeguridadVaciar");
 
+let mapa = new Map();
 
 /* 
 
@@ -45,25 +58,30 @@ VENTANA DE CREACION DE TAREAS
 botonAñadirTarea1.addEventListener("click", (event) => {
     event.preventDefault();
     mostrarCreacionTarea(1);
-    tituloVentanaModalCreacion.textContent = ">>> TO-DO <<<";
+    tituloVentanaModalCreacion1.textContent = "CREAR NUEVA TAREA PARA:";
+    tituloVentanaModalCreacion2.textContent = ">>> TO-DO <<<";
 });
 
 botonAñadirTarea2.addEventListener("click", (event) => {
     event.preventDefault();
     mostrarCreacionTarea(2);
-    tituloVentanaModalCreacion.textContent = ">>> DOING <<<";
+    tituloVentanaModalCreacion1.textContent = "CREAR NUEVA TAREA PARA:";
+    tituloVentanaModalCreacion2.textContent = ">>> DOING <<<";
 });
 
 botonAñadirTarea3.addEventListener("click", (event) => {
     event.preventDefault();
     mostrarCreacionTarea(3);
-    tituloVentanaModalCreacion.textContent = ">>> DONE <<<";
+    tituloVentanaModalCreacion1.textContent = "CREAR NUEVA TAREA PARA:";
+    tituloVentanaModalCreacion2.textContent = ">>> DONE <<<";
 });
 
 botonNUEVOsalirCrearTarea.addEventListener("click", (event) => {
     event.preventDefault();
     dejarFondoInutil.style.visibility = "hidden";
     mainAñadirTarea.style.visibility = "hidden";
+
+    limpiarContenidoCreacionTarea();
 });
 
 botonNUEVOsubirPrioridadTarea.addEventListener("click", (event) => {
@@ -83,12 +101,12 @@ botonNUEVOSubmitearTarea.addEventListener("click", (event) => {
     dejarFondoInutil.style.visibility = "hidden"; 
     mainAñadirTarea.style.visibility = "hidden";
     
-    tareaNUEVA = new Tarea (nombreTareaNUEVO.value, estado_TAREANUEVA, descripcionTareaNUEVO.value, prioridadTareaNUEVO.value);
-    nombreTareaNUEVO.value = "";
-    descripcionTareaNUEVO.value = "";
-    prioridadTareaNUEVO.value = "";
+    hola = new Tarea (nombreTareaNUEVO.value, estado_TAREANUEVA, descripcionTareaNUEVO.value, prioridadTareaNUEVO.value);
+    mapa.set(nombreTareaNUEVO.value, hola);
+    
+    limpiarContenidoCreacionTarea();
 
-    insertarTarea(tareaNUEVA);
+    insertarTarea(hola);
 }); 
 
 botonNUEVOcancelarCrearTarea.addEventListener("click", (event) => {
@@ -96,9 +114,7 @@ botonNUEVOcancelarCrearTarea.addEventListener("click", (event) => {
     dejarFondoInutil.style.visibility = "hidden"; 
     mainAñadirTarea.style.visibility = "hidden";
     
-    nombreTareaNUEVO.value = "";
-    descripcionTareaNUEVO.value = "";
-    prioridadTareaNUEVO.value = "";
+    limpiarContenidoCreacionTarea();
 });
 
 
@@ -146,8 +162,6 @@ botonSalirVentanaPreguntaSeguridadVaciar.addEventListener("click", (event) => {
 });
 
 
-
-
 /* 
 
 #############################
@@ -173,10 +187,41 @@ function mostrarCreacionTarea(estado){
 
 function insertarTarea (tarea){
 
+    let clonTareaMadre = tareaHija.cloneNode(true);
+    let nombreTarea = clonTareaMadre.getElementsByClassName("nombreTarea");
+    let prioridadTarea = clonTareaMadre.getElementsByClassName("prioridadTarea2");
+
+    nombreTarea[0].innerHTML = tarea.nombre;
+    prioridadTarea[0].innerHTML = tarea.prioridad;
+
+
+    switch (tarea.estado){
+        case 1:
+            contenedor1.appendChild(clonTareaMadre);
+            break;
+
+        case 2:
+            contenedor2.appendChild(clonTareaMadre);
+            break;
+
+        case 3:
+            contenedor3.appendChild(clonTareaMadre);
+            break;
+    }
+
+    clonTareaMadre.style.visibility = "initial";
+
 }
 
 function vaciarLista (lista){
 
+}
+
+function limpiarContenidoCreacionTarea(){
+    nombreTareaNUEVO.value = "";
+    descripcionTareaNUEVO.value = "";
+    prioridadTareaNUEVO.value = "";
+    prioridad_TAREANUEVA = 0;
 }
 
 class Tarea {
@@ -190,11 +235,6 @@ class Tarea {
         this.estado = estado;
         this.descripcion = descripcion;
         this.prioridad = prioridad;
-
-        console.log(nombre);
-        console.log(estado);
-        console.log(descripcion);
-        console.log(prioridad);
     }
 
     setNombre(nombre){
