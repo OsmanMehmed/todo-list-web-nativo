@@ -189,6 +189,12 @@ function insertarTarea (tarea){
 
     let clonTareaMadre = tareaHija.cloneNode(true);
     let nombreTarea = clonTareaMadre.getElementsByClassName("nombreTarea");
+
+    nombreTarea.addEventListener("click", (event) => {
+
+        
+    });
+
     let prioridadTarea = clonTareaMadre.getElementsByClassName("prioridadTarea2");
 
     nombreTarea[0].innerHTML = tarea.nombre;

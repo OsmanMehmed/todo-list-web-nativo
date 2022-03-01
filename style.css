@@ -537,3 +537,65 @@ VENTANA DE CREACION DE TAREAS
     color: rgb(206, 197, 197);
 }
 
+
+/* 
+
+#############################
+
+    VENTANA DE DESCRIPCION
+
+#############################
+
+*/
+
+.mainMostrarDescripcion{
+
+    height: 200px;
+    width: 500px;
+    background-color: white;
+}
+
+.descripcionTituloSalir{
+    display: flex;
+    flex-direction: row;
+    background-color: #97DA6A;
+}
+
+.descripcionTitulos{
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 35px;
+    width: 400px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.descripcionSalir{
+    margin-left: 25px;
+    margin-top: 7px;
+}
+
+.descripcionBotonSalir{
+    border: none;
+    background: none;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    font-weight: bold;
+}
+
+.descripcionImagenSalir{
+    height: 15px;
+    width: 15px;
+}
+
+.descripcionBotonSalir:hover{
+    background-color: rgba(0, 0, 0, 0.103);
+    border-radius: 100px;
+}
+
+.descripcionTarea{
+    height: 190px;
+    width: 490px;
+}
+
