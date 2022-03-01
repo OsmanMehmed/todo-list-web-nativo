@@ -189,17 +189,17 @@ function insertarTarea (tarea){
 
     let clonTareaMadre = tareaHija.cloneNode(true);
     let nombreTarea = clonTareaMadre.getElementsByClassName("nombreTarea");
+    let prioridadTarea = clonTareaMadre.getElementsByClassName("prioridadTarea2");
 
-    nombreTarea.addEventListener("click", (event) => {
+/*     nombreTarea.addEventListener("click", (event) => {
 
         
     });
-
-    let prioridadTarea = clonTareaMadre.getElementsByClassName("prioridadTarea2");
-
+ */
     nombreTarea[0].innerHTML = tarea.nombre;
     prioridadTarea[0].innerHTML = tarea.prioridad;
 
+    clonTareaMadre.style.visibility = "initial";
 
     switch (tarea.estado){
         case 1:
@@ -215,7 +215,6 @@ function insertarTarea (tarea){
             break;
     }
 
-    clonTareaMadre.style.visibility = "initial";
 
 }
 
