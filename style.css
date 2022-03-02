@@ -216,6 +216,19 @@ VENTANA DE CREACION DE TAREAS
     z-index: 1;
 }
 
+.tipoOrden{
+    border: none;
+    margin-left: 5px;
+    background-color: rgba(0, 0, 0, 0.123);
+    border-radius: 10px;
+    width: 70px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tipoOrden:hover{
+    background-color: rgba(0, 0, 0, 0.322);
+}
 
 .tituloModalTITULO{
     text-align: center;

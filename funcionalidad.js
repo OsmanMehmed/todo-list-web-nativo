@@ -18,6 +18,15 @@ let botonNUEVOsalirCrearTarea = document.getElementById("salirCrearTarea");
 let botonAceptarVentanaPreguntaSeguridadVaciar = document.getElementById("botonAceptarVentanaPreguntaSeguridadVaciar");
 let botonSalirVentanaPreguntaSeguridadVaciar = document.getElementById("botonSalirVentanaPreguntaSeguridadVaciar");
 
+let tipoOrden1 = document.getElementById("tipoOrden1");
+let tipoOrden2 = document.getElementById("tipoOrden2");
+let tipoOrden3 = document.getElementById("tipoOrden3");
+
+
+tipoOrden1.textContent = "Prioridad";
+tipoOrden2.textContent = "Prioridad";
+tipoOrden3.textContent = "Prioridad";
+
 
 let lista1 = document.getElementById("lista1");
 let lista2 = document.getElementById("lista2");
@@ -32,7 +41,6 @@ let tareaHija = tareaMadre.firstElementChild;
 
 let prioridad_TAREANUEVA = 0;
 let estado_TAREANUEVA = 0;
-
 let nTareas = 0;
 
 let prioridadTareaNUEVO = document.getElementById("tPrioridad");
@@ -80,35 +88,35 @@ class Tarea {
 
 let tareas = [
     {
-        nombre: "Tarea 1",
+        nombre: "Yugar lol 65 horas",
         descripcion: "Esta es la primera tarea de ejemplo, esta es la primera tarea de ejemplo",
         prioridad: 0,
         status: 1
     },
 
     {
-        nombre: "Tarea 2",
+        nombre: "Respirar",
         descripcion: "Esta es la descripción de la tarea 2 bla bla bla bla bla bla",
         prioridad: 1,
         status: 3
     },
 
     {
-        nombre: "Tarea 3",
+        nombre: "Dormir",
         descripcion: "Esta es, Esta es, Esta, Est, Es, E, ,",
         prioridad: 3,
         status: 3
     },
 
     {
-        nombre: "Tarea 4",
+        nombre: "Comprar Leche",
         descripcion: "Esta tarea es la correspondiente al nombre de Tarea 4",
         prioridad: 0,
         status: 2
     },
 
     {
-        nombre: "Tarea 5",
+        nombre: "Tomar café",
         descripcion: "TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5",
         prioridad: 1,
         status: 2
@@ -118,11 +126,37 @@ let tareas = [
 
 for (let i = 0; i < tareas.length; i++){
     let hola = new Tarea (tareas[i].nombre, tareas[i].status, tareas[i].descripcion, tareas[i].prioridad);
-    console.log(tareas[i].status);
     mapa.set(tareas[i].nombre, hola);
 
     insertarTarea(hola);
 }
+
+/* 
+
+#############################
+
+VENTANA ORDENAR PRIORIDADES
+
+#############################
+
+*/
+
+
+tipoOrden1.addEventListener("click", (event) => {
+    event.preventDefault();
+    ordenarLista(1,tipoOrden1.textContent);
+});
+
+tipoOrden2.addEventListener("click", (event) => {
+    event.preventDefault();
+    ordenarLista(2,tipoOrden2.textContent);
+});
+
+tipoOrden3.addEventListener("click", (event) => {
+    event.preventDefault();
+    ordenarLista(3,tipoOrden3.textContent);
+});
+
 
 /* 
 
@@ -211,12 +245,28 @@ botonSEGURIDADabrir1.addEventListener("click", (event) => {
     event.preventDefault();
     mostrarSeguridadVaciado();
     textoSalirVentanaPreguntaSeguridadVaciar.textContent = "TO-DO";
+
+    botonAceptarVentanaPreguntaSeguridadVaciar.addEventListener("click", (event) => {
+        event.preventDefault();
+        vaciarLista(1);
+        dejarFondoInutil.style.visibility = "hidden";
+        mainPreguntaSeguridadVaciar.style.visibility = "hidden";
+
+    });
 });
 
 botonSEGURIDADabrir2.addEventListener("click", (event) => {
     event.preventDefault();
     mostrarSeguridadVaciado();
     textoSalirVentanaPreguntaSeguridadVaciar.textContent = "DOING";
+
+    botonAceptarVentanaPreguntaSeguridadVaciar.addEventListener("click", (event) => {
+        event.preventDefault();
+        vaciarLista(2);
+        dejarFondoInutil.style.visibility = "hidden";
+        mainPreguntaSeguridadVaciar.style.visibility = "hidden";
+
+    });
 });
 
 botonSEGURIDADabrir3.addEventListener("click", (event) => {
@@ -224,15 +274,16 @@ botonSEGURIDADabrir3.addEventListener("click", (event) => {
     mostrarSeguridadVaciado();
     textoSalirVentanaPreguntaSeguridadVaciar.textContent = "DONE";
 
+    botonAceptarVentanaPreguntaSeguridadVaciar.addEventListener("click", (event) => {
+        event.preventDefault();
+        vaciarLista(3);
+        dejarFondoInutil.style.visibility = "hidden";
+        mainPreguntaSeguridadVaciar.style.visibility = "hidden";
+
+    });
 });
 
-botonAceptarVentanaPreguntaSeguridadVaciar.addEventListener("click", (event) => {
-    event.preventDefault();
-    vaciarLista();
-    dejarFondoInutil.style.visibility = "hidden";
-    mainPreguntaSeguridadVaciar.style.visibility = "hidden";
 
-});
 
 botonSalirVentanaPreguntaSeguridadVaciar.addEventListener("click", (event) => {
     event.preventDefault();
@@ -269,8 +320,6 @@ function mostrarCreacionTarea(estado){
     mainAñadirTarea.style.visibility = "initial";
     estado_TAREANUEVA = estado;
 }
-
-
 
 
 function insertarTarea (tarea){
@@ -311,6 +360,37 @@ function insertarTarea (tarea){
 
 function vaciarLista (lista){
 
+    switch (lista){
+        case 1:
+            if (contenedor1.firstChild){
+                contenedor1.innerHTML = "";
+            } 
+
+            break;
+        case 2:
+            if (contenedor2.firstChild){
+                contenedor2.innerHTML = "";
+            } 
+            break;
+        case 3:
+            if (contenedor3.firstChild){
+                contenedor3.innerHTML = "";
+            } 
+            break;
+    }
+}
+
+function ordenarLista(estado,tipo){
+    if (tipo == "Prioridad" && estado == 1){
+        let nHijos = contenedor1.childNodes;
+
+        for (let i = 0; i < nHijos.length; i++) {
+            nHijos = sort(nHijos);
+        }
+        
+        contenedor1.innerHTML = "";
+        contenedor1.appendChild(nHijos);
+    }
 }
 
 function limpiarContenidoCreacionTarea(){
