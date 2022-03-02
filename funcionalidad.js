@@ -48,6 +48,82 @@ let descripcionTareaSalir = document.getElementById("descripcionBotonSalir");
 let descripcionTareaLEER = document.getElementById("descripcionTareaLEER");
 let mapa = new Map();
 
+class Tarea {
+    nombre;
+    estado;
+    descripcion;
+    prioridad;
+
+    constructor(nombre, estado, descripcion, prioridad){
+        this.nombre = nombre;
+        this.estado = estado;
+        this.descripcion = descripcion;
+        this.prioridad = prioridad;
+    }
+
+    setNombre(nombre){
+        this.nombre = nombre;
+    }
+
+    setEstado(estado){
+        this.estado = estado;
+    }
+
+    setDescripcion(descripcion){
+        this.descripcion = descripcion;
+    }
+    
+    setPrioridad(prioridad){
+        this.prioridad = prioridad;
+    }
+};
+
+let tareas = [
+    {
+        nombre: "Tarea 1",
+        descripcion: "Esta es la primera tarea de ejemplo, esta es la primera tarea de ejemplo",
+        prioridad: 0,
+        status: 1
+    },
+
+    {
+        nombre: "Tarea 2",
+        descripcion: "Esta es la descripción de la tarea 2 bla bla bla bla bla bla",
+        prioridad: 1,
+        status: 3
+    },
+
+    {
+        nombre: "Tarea 3",
+        descripcion: "Esta es, Esta es, Esta, Est, Es, E, ,",
+        prioridad: 3,
+        status: 3
+    },
+
+    {
+        nombre: "Tarea 4",
+        descripcion: "Esta tarea es la correspondiente al nombre de Tarea 4",
+        prioridad: 0,
+        status: 2
+    },
+
+    {
+        nombre: "Tarea 5",
+        descripcion: "TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5 TAREA 5",
+        prioridad: 1,
+        status: 2
+    }
+
+];
+
+for (let i = 0; i < tareas.length; i++){
+    let hola = new Tarea (tareas[i].nombre, tareas[i].status, tareas[i].descripcion, tareas[i].prioridad);
+    console.log(tareas[i].status);
+    mapa.set(tareas[i].nombre, hola);
+
+    insertarTarea(hola);
+}
+
 /* 
 
 #############################
@@ -104,7 +180,7 @@ botonNUEVOSubmitearTarea.addEventListener("click", (event) => {
     dejarFondoInutil.style.visibility = "hidden"; 
     mainAñadirTarea.style.visibility = "hidden";
     
-    hola = new Tarea (nombreTareaNUEVO.value, estado_TAREANUEVA, descripcionTareaNUEVO.value, prioridadTareaNUEVO.value);
+    let hola = new Tarea (nombreTareaNUEVO.value, estado_TAREANUEVA, descripcionTareaNUEVO.value, prioridadTareaNUEVO.value);
     mapa.set(nombreTareaNUEVO.value, hola);
     
     limpiarContenidoCreacionTarea();
@@ -243,33 +319,3 @@ function limpiarContenidoCreacionTarea(){
     prioridadTareaNUEVO.value = 0;
     prioridad_TAREANUEVA = 0;
 }
-
-class Tarea {
-    nombre;
-    estado;
-    descripcion;
-    prioridad;
-
-    constructor(nombre, estado, descripcion, prioridad){
-        this.nombre = nombre;
-        this.estado = estado;
-        this.descripcion = descripcion;
-        this.prioridad = prioridad;
-    }
-
-    setNombre(nombre){
-        this.nombre = nombre;
-    }
-
-    setEstado(estado){
-        this.estado = estado;
-    }
-
-    setDescripcion(descripcion){
-        this.descripcion = descripcion;
-    }
-    
-    setPrioridad(prioridad){
-        this.prioridad = prioridad;
-    }
-};
