@@ -1,2 +1,2 @@
 # todo-list-web-nativo
-Modelo Js puro de un administrador de tareas - Front
+Kanban tasks manager - (Front, Javascript native)
